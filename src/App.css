@@ -1,0 +1,97 @@
+/* App.css */
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: auto;
+}
+
+.Navbar {
+  background-color: #282c34;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  width: 98%;
+}
+
+.Navbar ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.Navbar li {
+  margin-right: 10px;
+  position: relative;
+}
+
+.Navbar a {
+  text-decoration: none;
+  color: white;
+  padding: 5px 10px; /* Añade espacio alrededor del texto del enlace */
+  font-size: 16px;
+  transition: color 0.3s; /* Ajusta el tamaño de fuente según sea necesario */
+}
+
+.Navbar li:not(:last-child)::after {
+  content: '|'; /* Añade una línea vertical después de cada elemento excepto el último */
+  position: absolute;
+  right: -5px; /* Ajusta la posición de la línea vertical según sea necesario */
+  color: white; /* Color de la línea */
+}
+
+.Navbar a:hover {
+  color: #61dafb; /* Cambiamos el color cuando se pasa el puntero */
+}
+
+.Content {
+  background-color: #f0f0f0;
+  min-height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.App-logo {
+  height: 20vmin;
+  pointer-events: none;
+}
+.App-logo2 {
+  height: 7vmin;
+  pointer-events: none;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.btn {
+  border: none; 
+  color: black; 
+  padding: 14px 28px; 
+  cursor: pointer; 
+  border-radius: 5px;
+
+}
+
+.App .custom2 {
+  width: 100%;;
+}
+.primary {background-color: white; border: 2px solid #007bff;} 
+.primary:hover {background: #0b7dda; color: white;}
