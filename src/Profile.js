@@ -45,11 +45,11 @@ export const Profile = () => {
               <div className="custom">
               <select onChange={handleInterestChange} className="main-col">
                 <option value="">Selecciona un interés...</option>
-                <option value="Interés 1">Cocina</option>
-                <option value="Interés 2">Música</option>
-                <option value="Interés 3">Baile</option>
-                <option value="Interés 4">Álgebra</option>
-                <option value="Interés 5">Programación</option>
+                <option value="Cocina">Cocina</option>
+                <option value="Música">Música</option>
+                <option value="Baile">Baile</option>
+                <option value="Álgebra">Álgebra</option>
+                <option value="Programación">Programación</option>
                 {/* Agrega más opciones según sea necesario */}
               </select>
               <div >
@@ -72,11 +72,11 @@ export const Profile = () => {
               <div className="custom">
               <select onChange={handleSkillChange} className="main-col">
                 <option value="">Selecciona una habilidad...</option>
-                <option value="Habilidad 1">Cocina</option>
-                <option value="Habilidad 2">Música</option>
-                <option value="Habilidad 3">Baile</option>
-                <option value="Habilidad 4">Álgebra</option>
-                <option value="Habilidad 5">Programación</option>
+                <option value="Cocina">Cocina</option>
+                <option value="Música">Música</option>
+                <option value="Baile">Baile</option>
+                <option value="Baile">Álgebra</option>
+                <option value="Programación">Programación</option>
                 {/* Agrega más opciones según sea necesario */}
               </select>
               <div>
