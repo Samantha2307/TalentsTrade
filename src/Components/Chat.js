@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { obtenerRespuestaDelChatbot } from "../services/chatbot";
 
-const Chat = () => {
+const Chat = ({ chatAbierto }) => {
   const [mensajes, setMensajes] = useState([]);
   const [mostrarChat, setMostrarChat] = useState(true);
 

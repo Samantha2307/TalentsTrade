@@ -33,7 +33,7 @@ function App() {
   }, []);
 
   const abrirChat = () => {
-    setChatAbierto(true);
+    setChatAbierto(prevState => !prevState); // Toggle entre abierto y cerrado
   };  
 
   const cerrarChat = () => {
@@ -61,7 +61,7 @@ function App() {
 
       
       <button onClick={abrirChat} className="chat-button">Chatea!</button>
-      {chatAbierto && <Chat />}
+      {chatAbierto && <Chat chatAbierto={chatAbierto} />}
 
     </div>
   );
