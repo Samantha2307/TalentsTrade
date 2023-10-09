@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
-import { LoginButton } from "./Login";
-import { LogoutButton } from "./Logout";
 import { Profile } from "./Profile";
-import TalentsTrade_logo from "./TalentsTrade_logo.png";
 import "./App.css";
 
 import Header from "./Components/Header";
@@ -11,13 +8,14 @@ import Header2 from "./Components/Header2";
 
 import Footer from "./Components/Footer";
 import About from "./Components/About";
-import Resume from "./Components/Resume";
 import Contact from "./Components/Contact";
-import Portfolio from "./Components/Portfolio";
+import Chat from "./Components/Chat";
+
 
 function App() {
   const { isAuthenticated } = useAuth0();
   const [resumeData, setResumeData] = useState({});
+  const [chatAbierto, setChatAbierto] = useState(false);
 
   useEffect(() => {
     const fetchResumeData = async () => {
@@ -34,6 +32,13 @@ function App() {
     fetchResumeData();
   }, []);
 
+  const abrirChat = () => {
+    setChatAbierto(true);
+  };  
+
+  const cerrarChat = () => {
+    setChatAbierto(false);
+  };
   
   return (
     <div className="App">
@@ -52,6 +57,12 @@ function App() {
         )}  
 
       <Profile />
+      
+
+      
+      <button onClick={abrirChat} className="chat-button">Chatea!</button>
+      {chatAbierto && <Chat />}
+
     </div>
   );
 }
