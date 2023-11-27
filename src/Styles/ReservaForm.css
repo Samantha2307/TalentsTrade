@@ -52,3 +52,52 @@ form {
     margin-top: 20px;
   }
   
+  /* Estilo básico para el mensaje */
+.mensaje {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #4caf50;
+  color: white;
+  padding: 20px;
+  border-radius: 5px;
+  display: inline-block;
+  z-index: 1000; /* Asegúrate de que esté por encima de otros elementos */
+}
+
+/* ReservaForm.css */
+
+.tarjeta-reserva {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  background-color: #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+  min-width:1000 px;
+}
+
+.tarjeta-reserva div {
+  flex: 1; /* Para que ocupe el espacio restante */
+}
+
+.tarjeta-reserva div p{
+  margin: 10px; /* Para que ocupe el espacio restante */
+}
+
+.btn-aceptar,
+.btn-rechazar {
+  background-color: #4caf50; /* Color de fondo verde para aceptar */
+  color: white;
+  border: none;
+  padding: 10px;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+.btn-rechazar {
+  background-color: #f47236; /* Color de fondo rojo para rechazar */
+}

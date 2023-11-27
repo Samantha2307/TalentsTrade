@@ -17,8 +17,8 @@ import Chat from "./Components/Chat";
 import Explorar from "./Components/Explorar";
 import Conversacion from './Components/Conversacion';
 import FormularioReserva from './Components/ReservaForm';
-import MisReservas from './Components/MisReservas'; // Ajusta la ruta según tu estructura de archivos
-
+import MisReservas from './Components/MisReservas';
+import Solicitudes from './Components/Solicitudes';
 
 function App() {
   const { isAuthenticated } = useAuth0();
@@ -69,6 +69,7 @@ function App() {
           <Route path="/" element={<Profile />} />
           <Route path="/Conversacion/:receptor" element={<Conversacion/>} />
           <Route path="/MisReservas" element={<MisReservas />} />
+          <Route path="/Solicitudes" element={<Solicitudes />} />
         </Routes>
 
         <button onClick={abrirChat} className="chat-button">

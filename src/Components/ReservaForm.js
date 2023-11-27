@@ -13,6 +13,8 @@ const ReservaForm = () => {
     tipo: 'Presencial', // Valor predeterminado
   });
 
+  const [mensaje, setMensaje] = useState(null); 
+
   const { usuarioId } = useParams();
   const navigate = useNavigate();
 
@@ -43,10 +45,17 @@ const ReservaForm = () => {
     } catch (error) {
       console.error('Error al procesar la solicitud:', error);
     }
+
+    setMensaje('Solicitud de reserva registrada con éxito');
+    setTimeout(() => {
+      setMensaje(null);
+    }, 3000);
   };
 
   return (
     <div>
+
+{mensaje && <div className="mensaje">{mensaje}</div>}
       <h2 style={{color:'white'}}>Formulario de Reserva</h2>
       <form onSubmit={handleSubmit}>
         <label>

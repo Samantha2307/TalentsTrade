@@ -19,6 +19,9 @@ class Header extends Component {
               <Link to="/MisReservas" className="smoothscroll">
       MIS RESERVAS
     </Link>
+    <Link to="/Solicitudes" className="smoothscroll">
+      SOLICITUDES
+    </Link>
             </li>
             <li>
             <a><LogoutButton /></a>

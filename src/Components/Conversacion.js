@@ -87,7 +87,7 @@ const Conversacion = () => {
     <div>
         <Profile onEmailLoaded={handleEmailLoaded} />
       <h2 id= "encabezado-conversacion">Conversación con {emailReceptor}</h2>
-      <Mensajeria emisor={emisordef} receptor={receptordef} emisorID = {emisorID} receptorID ={receptor} />
+      <Mensajeria emisor={emisordef} receptor={receptordef} emisorID = {"655271af666048602f354f7c"} receptorID ={receptor} />
     </div>
   );
 };

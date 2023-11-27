@@ -91,6 +91,7 @@ const reservaSchema = new mongoose.Schema({
   servicioOfrecido: { type: String, required: true },
   notas: { type: String },
   tipo: { type: String, enum: ['Presencial', 'Virtual'], required: true },
+  estado: { type: String},
   usuarioId: { type: mongoose.Schema.Types.ObjectId, ref: 'Usuario', required: true },
   usuarioReservaId: { type: mongoose.Schema.Types.ObjectId, ref: 'Usuario', required: true },
 });
@@ -138,6 +139,7 @@ app.post('/api/reservas/crear', async (req, res) => {
       servicioOfrecido,
       notas,
       tipo,
+      estado,
       usuarioId,
       usuarioReservaId,
     } = req.body;
@@ -150,6 +152,7 @@ app.post('/api/reservas/crear', async (req, res) => {
       servicioOfrecido,
       notas,
       tipo,
+      estado,
       usuarioId,
       usuarioReservaId,
     });
@@ -256,6 +259,16 @@ app.get("/api/usuarios", async (req, res) => {
   try {
     const usuarios = await Usuario.find();
     res.json(usuarios);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Error al obtener usuarios" });
+  }
+});
+
+app.get("/api/reservas", async (req, res) => {
+  try {
+    const reservas = await Reserva.find();
+    res.json(reservas);
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: "Error al obtener usuarios" });

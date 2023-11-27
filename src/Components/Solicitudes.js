@@ -21,8 +21,8 @@ const MisReservas = () => {
   }, []); // Se ejecutará solo una vez al montar el componente
 
   return (
-    <div style={{width:"500px"}}>
-      <h2 style={{color:'white'}}>MIS RESERVAS</h2>
+    <div>
+      <h2 style={{color:'white'}}>MIS SOLICITUDES</h2>
       {reservas.map((reserva) => (
         <div key={reserva._id} className="tarjeta-reserva">
           <div>
@@ -36,9 +36,8 @@ const MisReservas = () => {
             <p style={{color:'green'}}>Estado: <p style={{color:'black'}}>{reserva.estado}</p></p>
           </div>
           <div>
-          {reserva.tipo === 'Virtual' && reserva.estado === 'Aprobada' && (
-            <button className="btn-aceptar">UNIRSE A SESIÓN</button>
-          )}
+            <button className="btn-aceptar">ACEPTAR</button>
+            <button className="btn-rechazar">RECHAZAR</button>
           </div>
         </div>
       ))}
