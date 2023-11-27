@@ -1,0 +1,54 @@
+
+.message-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  width: 300px; /* Ajusta el ancho según tu preferencia */
+  padding: 20px; /* Ajusta el espacio interno según tu preferencia */
+  background: rgba(255, 255, 255, 0.9); /* Fondo difuminado solo del cuadro del mensaje */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+  border-radius: 8px; /* Bordes redondeados */
+  backdrop-filter: blur(5px); /* Difuminado adicional (ajusta según tu preferencia) */
+}
+
+.message {
+  /* Estilos del mensaje */
+  font-size: 16px; /* Tamaño del texto */
+  color: #333; /* Color del texto */
+  text-align: center; /* Alineación del texto */
+}
+
+.success {
+  /* Estilos para éxito */
+  background-color: #d4edda; /* Fondo verde claro */
+  border-color: #c3e6cb; /* Borde verde */
+  color: #155724; /* Color del texto para éxito */
+}
+
+.error {
+  /* Estilos para error */
+  background-color: #f8d7da; /* Fondo rojo claro */
+  border-color: #f5c6cb; /* Borde rojo */
+  color: #721c24; /* Color del texto para error */
+}
+
+.close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 10px;
+  cursor: pointer;
+}
+.dark-text li span {
+    padding: 10px;
+    cursor: pointer;
+    
+  }
+
+.dark-text li {
+    color: #f5efef;
+    background-color:rgb(32, 32, 74);
+    padding: 3px; /* Color de texto oscuro */
+  }

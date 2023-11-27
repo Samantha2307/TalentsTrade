@@ -434,6 +434,17 @@ module.exports = function (webpackEnv) {
                 compact: isEnvProduction,
               },
             },
+            {
+              test: /\.m?js/,
+              resolve: {
+                fallback: {
+                  "path": require.resolve("path-browserify"),
+                  "os": require.resolve("os-browserify/browser"),
+                  "crypto": require.resolve("crypto-browserify")
+                }
+              }
+            },
+            
             // Process any JS outside of the app with Babel.
             // Unlike the application JS, we only compile the standard ES features.
             {
@@ -752,4 +763,5 @@ module.exports = function (webpackEnv) {
     // our own hints via the FileSizeReporter
     performance: false,
   };
+  
 };

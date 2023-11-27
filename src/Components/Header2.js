@@ -3,7 +3,8 @@ import ParticlesBg from "particles-bg";
 import Fade from "react-reveal";
 import { LoginButton } from "../Login";
 import { LogoutButton } from "../Logout";
-import { Profile } from "../Profile"; // Asegúrate de proporcionar la ruta correcta
+import { Explorar } from "./Explorar";
+import { Link } from "react-router-dom";// Asegúrate de proporcionar la ruta correcta
 
 class Header extends Component {
   render() {
@@ -12,9 +13,12 @@ class Header extends Component {
         <nav id="nav-wrap">
           <ul id="nav" className="nav">
             <li className="current">
-              <a className="smoothscroll" href="#">
+              <Link to="/Explorar" className="smoothscroll">
                 EXPLORAR
-              </a>
+              </Link>
+              <Link to="/MisReservas" className="smoothscroll">
+      MIS RESERVAS
+    </Link>
             </li>
             <li>
             <a><LogoutButton /></a>

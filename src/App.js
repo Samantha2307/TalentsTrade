@@ -1,24 +1,32 @@
 import React, { useState, useEffect } from "react";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+} from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 import { Profile } from "./Profile";
 import "./App.css";
 
 import Header from "./Components/Header";
 import Header2 from "./Components/Header2";
-
 import Footer from "./Components/Footer";
 import About from "./Components/About";
 import Contact from "./Components/Contact";
 import Chat from "./Components/Chat";
+import Explorar from "./Components/Explorar";
+import Conversacion from './Components/Conversacion';
+import FormularioReserva from './Components/ReservaForm';
+import MisReservas from './Components/MisReservas'; // Ajusta la ruta según tu estructura de archivos
 
 
 function App() {
   const { isAuthenticated } = useAuth0();
-  const [resumeData, setResumeData] = useState({});
+  //const [resumeData, setResumeData] = useState({});
   const [chatAbierto, setChatAbierto] = useState(false);
 
   useEffect(() => {
-    const fetchResumeData = async () => {
+    /*const fetchResumeData = async () => {
       try {
         const response = await fetch("./resumeData.json");
         const data = await response.json();
@@ -29,41 +37,46 @@ function App() {
       }
     };
 
-    fetchResumeData();
+    fetchResumeData();*/
   }, []);
 
   const abrirChat = () => {
-    setChatAbierto(prevState => !prevState); // Toggle entre abierto y cerrado
-  };  
+    setChatAbierto((prevState) => !prevState); // Toggle entre abierto y cerrado
+  };
 
   const cerrarChat = () => {
     setChatAbierto(false);
   };
-  
+
   return (
-    <div className="App">
-      
-      {isAuthenticated ? (
-        
-            <Header2/>
-            
+    <Router>
+      <div className="App">
+        {isAuthenticated ? (
+          <Header2 />
         ) : (
           <div className="custom2">
-          <Header  />
-          <About  />
-          <Contact />
-          <Footer />  
+            <Header />
+            <About />
+            <Contact />
+            <Footer />
+          </div>
+        )}
+
+        {/* Mueve el componente Profile dentro del Routes */}
+        <Routes>
+          <Route path="/Explorar" element={<Explorar />} />
+          <Route path="/Reservar/:usuarioId" element={<FormularioReserva />} />
+          <Route path="/" element={<Profile />} />
+          <Route path="/Conversacion/:receptor" element={<Conversacion/>} />
+          <Route path="/MisReservas" element={<MisReservas />} />
+        </Routes>
+
+        <button onClick={abrirChat} className="chat-button">
+          Chatea!
+        </button>
+        {chatAbierto && <Chat chatAbierto={chatAbierto} />}
       </div>
-        )}  
-
-      <Profile />
-      
-
-      
-      <button onClick={abrirChat} className="chat-button">Chatea!</button>
-      {chatAbierto && <Chat chatAbierto={chatAbierto} />}
-
-    </div>
+    </Router>
   );
 }
 
